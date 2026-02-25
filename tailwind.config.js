@@ -13,7 +13,8 @@ export default {
         secondary: "#FBD45B",
         heading: "#2A3936",
         paragraph: "#555555",
-        highlight: "#ECECEC"
+        highlight: "#ECECEC",
+        card:"#F9F4E8"
       },
     },
   },
