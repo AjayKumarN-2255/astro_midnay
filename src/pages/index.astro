@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/home/Banner.astro";
 import Need from "../components/home/Need.astro";
+import Driven from "../components/home/Driven.astro";
 ---
 
 <Layout>
@@ -9,8 +10,9 @@ import Need from "../components/home/Need.astro";
     <!-- overall container -->
     <main class="w-full">
         <div
-            class="bg-red-500 w-[92%] sm:w-[90%] md:w-full xl:max-w-[1300px] 2xl:max-w-[1600px] mx-auto"
+            class=" w-[92%] sm:w-[90%] md:w-full xl:max-w-[1300px] 2xl:max-w-[1600px] mx-auto"
         >
+            <Driven />
             <Need />
         </div>
     </main>
