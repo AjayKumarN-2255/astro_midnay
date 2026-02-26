@@ -1,0 +1,51 @@
+---
+import { profileData } from "../../data/home/profile_data";
+---
+
+<div class="w-full">
+    <div class="hidden md:block text-center mb-12">
+        <p class="font-handwriting text-primary text-lg mb-2">
+            Impact in action
+        </p>
+
+        <h2
+            class="text-4xl md:text-5xl font-extrabold text-heading tracking-tight"
+        >
+            Stories That Inspire Hope
+        </h2>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {
+            profileData.map((item, ind) => (
+                <div class="bg-card p-8 rounded-2xl flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-full bg-white">
+                            <img
+                                src={"/src/assets/home/profile.png"}
+                                alt={"profile"}
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-heading text-lg">
+                                {item.name}
+                            </h3>
+                            <p class="text-paragraph text-sm font-medium">
+                                {item.design}
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="text-paragraph md:max-w-full lg:max-w-lg font-thin leading-loose text-sm md:text-base flex-grow">
+                        {item.desc}
+                    </p>
+                    {ind == 0 && (
+                        <button class="mt-2 text-primary font-bold text-sm text-left hover:underline">
+                            Read More
+                        </button>
+                    )}
+                </div>
+            ))
+        }
+    </div>
+</div>
