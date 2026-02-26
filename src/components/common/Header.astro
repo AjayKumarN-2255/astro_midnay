@@ -36,23 +36,81 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <nav class="bg-white px-4 md:px-16 py-8 w-full flex justify-between items-center">
+    <nav
+        class="bg-white px-4 md:px-16 py-8 w-full flex justify-between items-center"
+    >
         <div>
-            <img src="/src/assets/logo.png" alt="Logo" class="h-8 lg:h-12 w-auto" />
+            <a href="/">
+                <img
+                    src="/src/assets/logo.png"
+                    alt="Logo"
+                    class="h-8 lg:h-12 w-auto"
+                />
+            </a>
         </div>
         <div>
-            <img src="/src/assets/hamburger.png" alt="Logo" class="h-4 lg:hidden w-auto" />
+            <img
+                src="/src/assets/hamburger.png"
+                alt="Logo"
+                class="h-4 lg:hidden w-auto"
+            />
         </div>
         <div class="hidden lg:flex items-center gap-6">
             <ul class="flex text-sm lg:text-base gap-6">
-                <li class="cursor-pointer">About us</li>
-                <li class="cursor-pointer">What We Do</li>
-                <li class="cursor-pointer">Get Involved</li>
-                <li class="cursor-pointer">Impact</li>
-                <li class="cursor-pointer">Resources</li>
-                <li class="cursor-pointer">Contact Us</li>
+                <li>
+                    <a
+                        href="/about"
+                        class="cursor-pointer hover:opacity-80 transition-opacity"
+                    >
+                        About Us
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/what-we-do"
+                        class="cursor-pointer hover:opacity-80 transition-opacity"
+                    >
+                        What We Do
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/get-involved"
+                        class="cursor-pointer hover:opacity-80 transition-opacity"
+                    >
+                        Get Involved
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/impact"
+                        class="cursor-pointer hover:opacity-80 transition-opacity"
+                    >
+                        Impact
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/resources"
+                        class="cursor-pointer hover:opacity-80 transition-opacity"
+                    >
+                        Resources
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/contact"
+                        class="cursor-pointer hover:opacity-80 transition-opacity"
+                    >
+                        Contact Us
+                    </a>
+                </li>
             </ul>
-            <div class="bg-secondary py-3 px-6 cursor-pointer font-medium rounded-full">Donate Now</div>
+            <div
+                class="bg-secondary py-3 px-6 cursor-pointer font-medium rounded-full"
+            >
+                Donate Now
+            </div>
         </div>
     </nav>
 </div>
