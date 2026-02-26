@@ -1,20 +1,23 @@
-<div class="max-w-[1120px] 2xl:max-w-[1350px] w-full mx-auto">
-    <div class="flex w-full">
-        <div class="w-full items-center lg:w-1/2 flex">
+<div
+    class="max-w-[1120px] 2xl:max-w-[1350px] w-full flex flex-col gap-div_sm_gap my-div_sm_gap lg:gap-div_lg_gap lg:my-div_lg_gap mx-auto"
+>
+    <!-- first section -->
+    <div class="flex flex-col lg:flex-row w-full">
+        <div class="w-full items-center lg:w-1/2 flex mb-10">
             <img
                 src={"/src/assets/home/driven.jpg"}
                 alt={"test_image"}
-                class="h-[490px] 2xl:h-[550px] w-[85%] object-cover rounded-3xl"
+                class="h-[385px] md:h-[490px] 2xl:h-[550px] w-full lg:w-[85%] object-cover rounded-3xl"
             />
         </div>
         <div class="w-full lg:w-1/2 flex flex-col justify-center">
-            <p class="text-primary font-handwriting text-lg mb-4">
+            <p class="text-primary font-handwriting text-lg md:mb-4">
                 Who we are
             </p>
 
             <!-- Main heading -->
             <h2
-                class="text-4xl md:text-5xl font-nunito font-medium text-heading leading-tight mb-6"
+                class="text-4xl md:text-5xl font-nunito font-medium text-heading leading-tight mb-4 md:mb-6"
             >
                 Driven by Compassion.<br />
                 Guided by Purpose.
@@ -34,7 +37,7 @@
             <div
                 class="flex gap-4 items-start border-l-4 border-primary pl-4 mb-8"
             >
-                <p class="text-paragraph text-lg font-medium">
+                <p class="text-paragraph text-base md:text-lg font-medium">
                     Helped fund
                     <span class="text-primary font-semibold">24,537</span>
                     Projects in
@@ -51,6 +54,55 @@
             >
                 Learn Our Story
             </button>
+        </div>
+    </div>
+
+    <!-- second section -->
+    <div
+        class="flex flex-col md:flex-row w-full md:h-52 bg-primary
+           px-6 sm:px-10 lg:px-24 py-6 md:py-0
+           items-center justify-between rounded-3xl
+           font-nunito text-white"
+    >
+        <!-- Item 1 -->
+        <div class="flex flex-col items-center py-6 md:py-0">
+            <h2 class="text-6xl md:text-6xl lg:text-7xl font-bold">70m</h2>
+            <p class="mt-2 text-lg font-light font-handwriting">
+                Total donation
+            </p>
+        </div>
+
+        <!-- Divider -->
+        <div class="w-20 h-px md:w-px md:h-16 bg-white/30"></div>
+
+        <!-- Item 2 -->
+        <div class="flex flex-col items-center py-6 md:py-0">
+            <h2 class="text-6xl md:text-6xl lg:text-7xl font-bold">48k</h2>
+            <p class="mt-2 text-lg font-light font-handwriting">
+                Projects funded
+            </p>
+        </div>
+
+        <!-- Divider -->
+        <div class="w-20 h-px md:w-px md:h-16 bg-white/30"></div>
+
+        <!-- Item 3 -->
+        <div class="flex flex-col items-center py-6 md:py-0">
+            <h2 class="text-6xl md:text-6xl lg:text-7xl font-bold">38%</h2>
+            <p class="mt-2 text-lg font-light font-handwriting">
+                Kids need help
+            </p>
+        </div>
+
+        <!-- Divider -->
+        <div class="w-20 h-px md:w-px md:h-16 bg-white/30"></div>
+
+        <!-- Item 4 -->
+        <div class="flex flex-col items-center py-6 md:py-0">
+            <h2 class="text-6xl md:text-6xl lg:text-7xl font-bold">230</h2>
+            <p class="mt-2 text-lg font-light font-handwriting">
+                Our volunteers
+            </p>
         </div>
     </div>
 </div>
