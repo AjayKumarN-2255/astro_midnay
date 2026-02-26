@@ -1,0 +1,30 @@
+---
+import Card from "./Card.astro";
+import { homeSections } from "../../data/about/need_data";
+---
+
+<div
+    class="w-full bg-card mt-10 rounded-[28px] p-5 lg:p-24 flex flex-col gap-6"
+>
+    <div class="mx-auto w-fit flex flex-col justify-center">
+        <p class="text-primary text-xl text-center font-handwriting">
+            Our focus areas
+        </p>
+        <h1
+            class="font-nunito text-3xl md:text-4xl text-heading font-bold  text-center"
+        >
+            How We Make An Impact
+        </h1>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {
+            homeSections.map((each: any) => (
+                <Card
+                    title={each.title}
+                    content={each.content}
+                    image={each.image}
+                />
+            ))
+        }
+    </div>
+</div>
