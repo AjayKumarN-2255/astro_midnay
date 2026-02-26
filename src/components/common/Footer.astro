@@ -1,0 +1,117 @@
+---
+// Footer.astro
+const currentYear = new Date().getFullYear();
+---
+
+<div
+    class="w-full bg-heading py-div_sm_gap lg:h-[400px] flex justify-center items-center text-white"
+>
+    <div class="w-[87%] grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24">
+        <!-- Logo + Description -->
+        <div class="flex flex-col gap-6">
+            <img
+                src="/src/assets/f_logo.png"
+                alt="Globebond Logo"
+                class="w-72 h-auto"
+            />
+            <p class="leading-relaxed text-sm md:text-base max-w-sm">
+                Lorem ipsum dolor sit amet consectetur. In donec netus tellus
+                mollis pharetra venenatis porta magna morbi. Magna nunc
+                fringilla turpis urna elementum.
+            </p>
+        </div>
+
+        <!-- Links -->
+        <div class="flex flex-col gap-6">
+            <h3 class="text-xl font-bold">Link</h3>
+            <ul class="flex flex-col gap-4">
+                <li>
+                    <a
+                        href="/about"
+                        class="hover:opacity-80 transition-opacity"
+                    >
+                        About Us
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/what-we-do"
+                        class="hover:opacity-80 transition-opacity"
+                    >
+                        What We Do
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/get-involved"
+                        class="hover:opacity-80 transition-opacity"
+                    >
+                        Get Involved
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/resource"
+                        class="hover:opacity-80 transition-opacity"
+                    >
+                        Resource
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="flex flex-col gap-6">
+            <h3 class="text-xl font-bold">Contact Us</h3>
+            <ul class="flex flex-col gap-5">
+                <li class="flex items-center gap-3">
+                    <span>📞</span>
+                    <a href="tel:+915678690516" class="hover:opacity-80">
+                        +91 5678 690 516
+                    </a>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span>✉️</span>
+                    <a href="mailto:info@drmeghna.com" class="hover:opacity-80">
+                        info@drmeghna.com
+                    </a>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="mt-1">📍</span>
+                    <span>
+                        123 Wellness Road Serenity City,<br />
+                        CA 90210 United States
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<footer class="w-full bg-[#1c2624] py-6 md:h-[75px] md:py-0 flex items-center">
+    <div
+        class="w-[92%] lg:w-[88%] 2xl:max-w-[1700px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-white"
+    >
+        <div
+            class="text-sm md:text-base font-normal opacity-90 leading-relaxed"
+        >
+            © Copyright {currentYear} Globebond. All Rights Reserved. Powered by Midnay
+        </div>
+
+        <div class="flex items-center gap-3 text-sm md:text-base">
+            <a
+                href="/privacy-policy"
+                class="hover:text-[#006951] transition-colors"
+            >
+                Privacy Policy
+            </a>
+            <span class="opacity-40">|</span>
+            <a
+                href="/terms-conditions"
+                class="hover:text-[#006951] transition-colors"
+            >
+                Terms & Conditions
+            </a>
+        </div>
+    </div>
+</footer>
