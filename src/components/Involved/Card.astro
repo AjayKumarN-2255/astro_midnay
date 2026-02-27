@@ -1,0 +1,20 @@
+---
+const { title, content, image } = Astro.props;
+---
+
+<div
+    class="bg-white xl:h-[385px] rounded-2xl overflow-hidden
+            flex flex-col
+            shadow-[0_10px_30px_-10px_rgba(0,0,0,0.15)]"
+>
+    <img src={image} alt={title} class="w-full h-[225px] object-cover" />
+
+    <div class="p-6 flex flex-col gap-2">
+        <h3 class="text-2xl font-nunito font-semibold text-heading">
+            {title}
+        </h3>
+        <p class="text-paragraph text-base leading-relaxed">
+            {content}
+        </p>
+    </div>
+</div>

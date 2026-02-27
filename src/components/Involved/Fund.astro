@@ -1,0 +1,29 @@
+---
+import { homeSections } from "../../data/involved/fund_data";
+
+import Card from "./Card.astro";
+---
+
+<div class="w-full">
+    <div class="mx-auto w-fit flex flex-col justify-center mb-8">
+        <p class="text-primary text-xl text-center font-handwriting">
+            Help & donate us now
+        </p>
+        <h1
+            class="font-nunito text-3xl md:text-4xl text-heading font-bold text-center"
+        >
+            Upcoming Fundraisers
+        </h1>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {
+            homeSections.map((each: any) => (
+                <Card
+                    title={each.title}
+                    content={each.content}
+                    image={each.image}
+                />
+            ))
+        }
+    </div>
+</div>

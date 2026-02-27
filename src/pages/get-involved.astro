@@ -1,14 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+import Banner from "../components/Involved/Banner.astro";
+
+import Contribution from "../components/Involved/Contribution.astro";
+import Opportunities from "../components/Involved/Opportunities.astro";
+import Member from "../components/Involved/Member.astro";
+import Fund from "../components/Involved/Fund.astro";
+import Adv from "../components/Involved/Adv.astro";
+import Support from "../components/Involved/Support.astro";
 ---
 
 <Layout>
     <!-- overall container -->
+    <Banner />
     <main class="w-full">
         <div
             class="w-[92%] sm:w-[90%] md:w-[92%] xl:max-w-[1300px] 2xl:max-w-[1600px] mx-auto"
         >
-            get involved page
+            <Contribution />
+            <Opportunities />
+            <Member />
+            <Fund />
+        </div>
+        <Adv />
+        <div
+            class="w-[92%] sm:w-[90%] md:w-[92%] xl:max-w-[1300px] 2xl:max-w-[1600px] mx-auto"
+        >
+            <Support />
         </div>
     </main>
 </Layout>
