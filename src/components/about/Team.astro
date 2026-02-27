@@ -1,0 +1,120 @@
+---
+const members = [
+    {
+        name: "Jarek Miliszewski",
+        role: "NGO",
+        image: "../src/assets/about/profile_1.jpg",
+    },
+    {
+        name: "Jarek Miliszewski",
+        role: "NGO",
+        image: "./src/assets/about/profile_2.jpg",
+    },
+    {
+        name: "Jarek Miliszewski",
+        role: "NGO",
+        image: "./src/assets/about/profile_3.jpg",
+    },
+];
+---
+
+<div
+    class="max-w-[1120px] 2xl:max-w-[1350px] w-full flex flex-col gap-div_sm_gap my-div_sm_gap lg:gap-div_lg_gap lg:my-div_lg_gap mx-auto"
+>
+    <!-- first section -->
+    <div
+        class="flex flex-col md:flex-row w-full md:h-52 bg-primary
+           px-6 sm:px-10 lg:px-24 py-6 md:py-0
+           items-center justify-between rounded-3xl
+           font-nunito text-white"
+    >
+        <!-- Item 1 -->
+        <div class="flex flex-col items-center py-6 md:py-0">
+            <h2 class="text-6xl md:text-6xl lg:text-7xl font-bold">70m</h2>
+            <p class="mt-2 text-lg font-light font-handwriting">
+                Total donation
+            </p>
+        </div>
+
+        <!-- Divider -->
+        <div class="w-20 h-px md:w-px md:h-16 bg-white/30"></div>
+
+        <!-- Item 2 -->
+        <div class="flex flex-col items-center py-6 md:py-0">
+            <h2 class="text-6xl md:text-6xl lg:text-7xl font-bold">48k</h2>
+            <p class="mt-2 text-lg font-light font-handwriting">
+                Projects funded
+            </p>
+        </div>
+
+        <!-- Divider -->
+        <div class="w-20 h-px md:w-px md:h-16 bg-white/30"></div>
+
+        <!-- Item 3 -->
+        <div class="flex flex-col items-center py-6 md:py-0">
+            <h2 class="text-6xl md:text-6xl lg:text-7xl font-bold">38%</h2>
+            <p class="mt-2 text-lg font-light font-handwriting">
+                Kids need help
+            </p>
+        </div>
+
+        <!-- Divider -->
+        <div class="w-20 h-px md:w-px md:h-16 bg-white/30"></div>
+
+        <!-- Item 4 -->
+        <div class="flex flex-col items-center py-6 md:py-0">
+            <h2 class="text-6xl md:text-6xl lg:text-7xl font-bold">230</h2>
+            <p class="mt-2 text-lg font-light font-handwriting">
+                Our volunteers
+            </p>
+        </div>
+    </div>
+
+    <!-- second section -->
+    <div class="w-full">
+        <div class="mx-auto w-fit flex mb-8 flex-col justify-center">
+            <p class="text-primary text-xl text-center font-handwriting">
+                Help & donate us now
+            </p>
+            <h1
+                class="font-nunito text-3xl md:text-5xl
+                 text-heading font-bold text-center"
+            >
+            Meet Our Team
+            </h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {
+              members.map((member) => (
+                <div class="relative h-[420px] rounded-3xl mb-10 xl:mb-0">
+          
+                  <!-- Image -->
+                  <div class="h-full rounded-3xl overflow-hidden">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      class="w-full h-full object-cover object-center"
+                    />
+                  </div>
+          
+                  <!-- Bottom Card -->
+                  <div
+                    class="absolute -bottom-10 left-1/2 -translate-x-1/2
+                           w-[260px] sm:w-[290px] h-[90px] sm:h-[95px]
+                           rounded-2xl bg-card
+                           flex flex-col items-center justify-center text-center"
+                  >
+                    <h1 class="text-lg sm:text-xl text-heading font-nunito">
+                      {member.name}
+                    </h1>
+                    <p class="text-sm sm:text-base text-paragraph">
+                      {member.role}
+                    </p>
+                  </div>
+          
+                </div>
+              ))
+            }
+          </div>
+    </div>
+</div>
