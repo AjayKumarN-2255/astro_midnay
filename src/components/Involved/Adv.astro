@@ -1,8 +1,74 @@
 <div
-    class="w-full bg-card h-[640px]
-         flex flex-col gap-12
-         my-div_sm_gap lg:my-div_lg_gap
-         mx-auto rounded-[30px]"
+    class="w-full bg-card
+            lg:h-[640px]
+           flex flex-col items-center justify-center
+           my-div_sm_gap lg:my-div_lg_gap
+           mx-auto rounded-[30px] lg:px-4"
 >
-    Advocating
+    <div
+        class="max-w-[1130px] 2xl:max-w-[1200px] w-full
+               flex flex-col-reverse lg:flex-row
+               rounded-[30px] lg:py-10 2xl:py-12 overflow-hidden bg-white"
+    >
+        <!-- Left Content -->
+        <div
+            class="w-full lg:w-1/2
+                   flex flex-col gap-6
+                   justify-center
+                   px-6 sm:px-10 lg:px-20
+                   py-10 lg:py-0
+                   text-center lg:text-left items-center lg:items-start"
+        >
+            <div class="flex flex-col gap-4 max-w-md">
+                <div>
+                    <p
+                        class="text-primary text-lg sm:text-xl mb-2 font-handwriting"
+                    >
+                        Advocacy
+                    </p>
+                    <h1
+                        class="font-nunito text-2xl sm:text-3xl md:text-4xl
+                               text-heading font-bold"
+                    >
+                        Advocating for<br class="hidden sm:block" />
+                        Meaningful Change
+                    </h1>
+                </div>
+
+                <p class="text-paragraph">
+                    Support evidence-based policies that strengthen communities
+                    and safeguard the well-being of children. Your participation
+                    helps drive long-term impact.
+                </p>
+            </div>
+
+            <div
+                class="bg-secondary text-heading py-3 px-6
+                       cursor-pointer font-medium rounded-full"
+            >
+                Support the Initiative
+            </div>
+        </div>
+
+        <!-- Right Image -->
+        <div
+            class="w-full lg:w-1/2
+                   flex items-center justify-center
+                   px-6 sm:px-10 lg:px-20
+                   py-4 lg:py-0"
+        >
+            <div
+                class="w-[220px] h-[220px]
+                       sm:w-[280px] sm:h-[280px]
+                       lg:w-[361px] lg:h-[361px]
+                       bg-[#ffe7b0] rounded-full p-3"
+            >
+                <img
+                    class="w-full h-full rounded-full object-cover"
+                    src="/src/assets/home/image_1.jpg"
+                    alt="Advocacy"
+                />
+            </div>
+        </div>
+    </div>
 </div>
