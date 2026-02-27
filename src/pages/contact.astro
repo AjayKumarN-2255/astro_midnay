@@ -2,16 +2,19 @@
 import Layout from "../layouts/Layout.astro";
 
 import Banner from "../components/contact/Banner.astro";
+import Form from "../components/contact/Form.astro";
+import Map from "../components/contact/Map.astro";
 ---
 
 <Layout>
-    <Banner/>
+    <Banner />
     <!-- overall container -->
     <main class="w-full">
         <div
             class="w-[92%] sm:w-[90%] md:w-[92%] xl:max-w-[1300px] 2xl:max-w-[1600px] mx-auto"
         >
-           contact page
+            <Form />
         </div>
     </main>
+    <Map />
 </Layout>
