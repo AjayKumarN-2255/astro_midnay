@@ -1,0 +1,45 @@
+---
+import { postData } from "../../data/resource/postData";
+import Card from "./Card.astro";
+---
+
+<div class="w-full
+flex flex-col gap-14
+my-div_sm_gap mx-auto">
+    <!-- search bar -->
+    <div class="relative w-full max-w-[525px]">
+        <input
+            class="px-8 pr-14 py-4 border w-full
+             border-paragraph outline-paragraph
+             rounded-full name-input"
+            placeholder="Search Resources.."
+        />
+
+        <img
+            src="/src/assets/resource/search.png"
+            alt="Search"
+            class="absolute right-8 top-1/2 -translate-y-1/2
+             w-5 h-5 pointer-events-none"
+        />
+    </div>
+
+    <!-- post listing -->
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {
+            postData.map(({ content, image, title }) => (
+                <Card content={content} title={title} image={image} />
+            ))
+        }
+    </div>
+
+    <!-- load more button -->
+    <div class="flex justify-center">
+        <button
+            class="bg-white border border-secondary hover:bg-secondary hover:border-white'
+             text-heading flex items-center gap-2 py-3 w-fit hover:text-white
+             h-fit px-8 cursor-pointer font-medium rounded-full"
+        >
+            Load More
+        </button>
+    </div>
+</div>
