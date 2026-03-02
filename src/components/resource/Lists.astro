@@ -1,6 +1,10 @@
 ---
-import { postData } from "../../data/resource/postData";
+// import { postData } from "../../data/resource/postData";
 import Card from "./Card.astro";
+
+import { fetchPosts } from "../../lib/getPostData.js";
+
+const data = await fetchPosts();
 ---
 
 <div class="w-full
@@ -26,8 +30,12 @@ my-div_sm_gap mx-auto">
     <!-- post listing -->
     <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {
-            postData.map(({ content, image, title }) => (
-                <Card content={content} title={title} image={image} />
+            data.map((post: any) => (
+                <Card
+                    title={post.title}
+                    content={post.content}
+                    image={post.featuredImage?.node?.sourceUrl}
+                />
             ))
         }
     </div>
@@ -35,7 +43,7 @@ my-div_sm_gap mx-auto">
     <!-- load more button -->
     <div class="flex justify-center">
         <button
-            class="bg-white border border-secondary hover:bg-secondary hover:border-white'
+            class="bg-white border border-secondary hover:bg-secondary hover:border-white
              text-heading flex items-center gap-2 py-3 w-fit hover:text-white
              h-fit px-8 cursor-pointer font-medium rounded-full"
         >
