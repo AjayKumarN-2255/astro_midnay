@@ -1,8 +1,91 @@
 <div
     class="max-w-[950px] bg-card w-full flex flex-col
-         my-div_sm_gap lg:my-div_lg_gap rounded-[30px]
-         gap-div_sm_gap lg:gap-div_lg_gap
+         mt-div_sm_gap lg:mt-div_lg_gap rounded-[30px]
+         mb-[160px] lg:mb-[240px]
          mx-auto"
 >
-    <div class="w-full h-[725px]"></div>
+    <div class="w-full md:h-[725px] px-6 md:px-8 flex flex-col">
+        <!-- heading -->
+        <div class="mx-auto w-fit flex flex-col justify-center my-4 md:my-8">
+            <p class="text-primary text-xl text-center font-handwriting">
+                Contact with us
+            </p>
+            <h1
+                class="font-nunito text-xl md:text-4xl lg:text-5xl mt-1 text-heading text-center"
+            >
+                Feel free to write us <br /> anytime
+            </h1>
+        </div>
+
+        <!-- input section -->
+        <div class="w-full h-full flex flex-col gap-6 md:gap-4">
+            <div
+                class="w-full h-1/2 grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-x-6 gap-y-6 md:gap-y-4"
+            >
+                <div class="flex flex-col gap-1">
+                    <label
+                        class="text-heading text-sm lg:text-[15px] required-label"
+                        >Name</label
+                    >
+                    <input
+                        class="rounded-lg border p-3 lg:p-4 border-[#C3E3FA]
+                         outline-[#C3E3FA] name-input placeholder:text-sm lg:placeholder:text-base"
+                        placeholder="Enter Your Name"
+                    />
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label
+                        class="text-heading text-sm lg:text-[15px] required-label"
+                        >Email</label
+                    >
+                    <input
+                        class="rounded-lg border p-3 lg:p-4 border-[#C3E3FA
+                         outline-[#C3E3FA] name-input placeholder:text-sm lg:placeholder:text-base"
+                        placeholder="Enter Your Email"
+                    />
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label class="text-heading text-sm lg:text-[15px]"
+                        >Phone</label
+                    >
+                    <input
+                        class="rounded-lg border p-3 lg:p-4 border-[#C3E3FA]
+                         outline-[#C3E3FA] name-input placeholder:text-sm lg:placeholder:text-base"
+                        placeholder="Enter Your Number"
+                    />
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label class="text-heading text-sm lg:text-[15px]"
+                        >Subject</label
+                    >
+                    <input
+                        class="rounded-lg border p-3 lg:p-4 border-[#C3E3FA] 
+                        outline-[#C3E3FA] name-input placeholder:text-sm lg:placeholder:text-base"
+                        placeholder="Enter Your Subject"
+                    />
+                </div>
+            </div>
+            <div class="w-full h-1/2">
+                <div class="flex flex-col h-full gap-2">
+                    <label class="text-heading text-sm mlg:text-[15px]"
+                        >Message</label
+                    >
+                    <textarea
+                        class="rounded-lg border p-3 lg:p-4 h-32 md:h-full border-[#C3E3FA]
+                         outline-[#C3E3FA] placeholder:text-sm lg:placeholder:text-base
+                         resize-none placeholder:opacity-100"
+                        placeholder="Write a Message"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- button section -->
+        <div class="flex justify-center">
+            <button
+                class="bg-secondary text-heading py-3 w-fit h-fit px-10 my-6 md:my-10 cursor-pointer font-medium rounded-full"
+            >
+                Submit
+            </button>
+        </div>
+    </div>
 </div>

@@ -5,3 +5,14 @@
 *::-webkit-scrollbar {
     display: none;
 }
+
+.name-input::placeholder {
+    color: #555555;
+    opacity: 1;
+}
+
+.required-label::after {
+    content: "*";
+    color: red;
+    margin-left: 2px;
+}
