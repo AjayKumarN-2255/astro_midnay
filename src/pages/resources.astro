@@ -1,8 +1,17 @@
 ---
-import Layout from "../layouts/Layout.astro";
+// export const prerender = false; // ensure SSR (important)
 
+import Layout from "../layouts/Layout.astro";
 import Banner from "../components/resource/Banner.astro";
 import Lists from "../components/resource/Lists.astro";
+
+// Disable caching for this page
+// Astro.response.headers.set(
+//   "Cache-Control",
+//   "no-store, no-cache, must-revalidate, proxy-revalidate"
+// );
+// Astro.response.headers.set("Pragma", "no-cache");
+// Astro.response.headers.set("Expires", "0");
 ---
 
 <Layout>

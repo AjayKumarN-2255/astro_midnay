@@ -1,5 +1,7 @@
+// astro.config.mjs
 import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
 
 export default defineConfig({
-  // no need for Vite plugin for Tailwind v3
+  integrations: [react()],
 });
