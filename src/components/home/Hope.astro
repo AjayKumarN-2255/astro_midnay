@@ -1,3 +1,8 @@
+---
+const { hopeContent } = Astro.props;
+const { image, paragraph, heading } = hopeContent;
+---
+
 <div
     class="w-full max-w-[896px] flex flex-col rounded-3xl
          my-div_sm_gap lg:my-div_lg_gap
@@ -5,20 +10,20 @@
 >
     <div class="hidden md:block text-center mb-12">
         <p class="font-handwriting text-primary text-lg mb-2">
-            Impact in action
+            {paragraph}
         </p>
 
         <h2
             class="text-4xl md:text-5xl font-nunito font-extrabold text-heading tracking-tight"
         >
-            Stories That Inspire Hope
+            {heading}
         </h2>
     </div>
     <!-- Image wrapper -->
     <div class="relative w-full overflow-hidden rounded-lg md:rounded-3xl">
         <!-- Image -->
         <img
-            src="/src/assets/home/hope.jpg"
+            src={image}
             alt="test_image"
             class="h-[180px] sm:h-[300px] md:h-[450px] xl:h-[504px] 2xl:h-[550px]
              w-full object-cover"
@@ -31,7 +36,7 @@
             <img
                 src="/src/assets/home/utube.png"
                 alt="test_image"
-                class="w-12 h-7  md:w-20 md:h-14"
+                class="w-12 h-7 md:w-20 md:h-14"
             />
         </div>
     </div>

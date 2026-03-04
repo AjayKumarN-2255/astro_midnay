@@ -1,22 +1,25 @@
 ---
-import { profileData } from "../../data/home/profile_data";
+// import { profileData } from "../../data/home/profile_data";
+
+const { profileContent } = Astro.props;
+const { paragraph, heading, cards } = profileContent;
 ---
 
 <div class="w-full">
     <div class="hidden md:block text-center mb-12">
         <p class="font-handwriting text-primary text-lg mb-2">
-            Impact in action
+            {paragraph}
         </p>
 
         <h2
             class="text-4xl md:text-5xl font-extrabold text-heading font-nunito tracking-tight"
         >
-            Stories That Inspire Hope
+            {heading}
         </h2>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {
-            profileData.map((item, ind) => (
+            cards.map((item: any, ind: any) => (
                 <div class="bg-card p-8 rounded-2xl flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-16 h-16 rounded-full bg-white">
@@ -31,7 +34,7 @@ import { profileData } from "../../data/home/profile_data";
                                 {item.name}
                             </h3>
                             <p class="text-paragraph text-sm font-medium">
-                                {item.design}
+                                {item.role}
                             </p>
                         </div>
                     </div>

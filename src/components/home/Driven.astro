@@ -1,3 +1,9 @@
+---
+const { drivenContent } = Astro.props;
+const { image, paragraph, heading, content, subContent, btn_content } =
+    drivenContent;
+---
+
 <div
     class="max-w-[1120px] 2xl:max-w-[1350px] w-full flex flex-col gap-div_sm_gap my-div_sm_gap lg:gap-div_lg_gap lg:my-div_lg_gap mx-auto"
 >
@@ -5,32 +11,25 @@
     <div class="flex flex-col lg:flex-row w-full">
         <div class="w-full items-center lg:w-1/2 flex mb-10">
             <img
-                src={"/src/assets/home/driven.jpg"}
+                src={image}
                 alt={"test_image"}
                 class="h-[385px] md:h-[490px] 2xl:h-[550px] w-full lg:w-[85%] object-cover rounded-3xl"
             />
         </div>
         <div class="w-full lg:w-1/2 flex flex-col justify-center">
             <p class="text-primary font-handwriting text-lg md:mb-4">
-                Who we are
+                {paragraph}
             </p>
 
             <!-- Main heading -->
             <h2
                 class="text-4xl md:text-5xl font-nunito font-medium text-heading leading-tight mb-4 md:mb-6"
-            >
-                Driven by Compassion.<br />
-                Guided by Purpose.
-            </h2>
+                set:html={heading}
+            />
 
             <!-- Description -->
             <p class="text-paragraph font-thin leading-relaxed mb-6">
-                We believe real change begins at the community level. Through
-                education programs, healthcare initiatives, and emergency
-                relief, we empower vulnerable individuals to build independent
-                and dignified lives. Our focus is not just short-term help — but
-                long-term transformation through trust, transparency, and
-                impact.
+                {content}
             </p>
 
             <!-- Highlight stats -->
@@ -52,7 +51,7 @@
             <button
                 class="bg-secondary text-heading font-medium px-8 py-3 w-fit rounded-full transition"
             >
-                Learn Our Story
+                {btn_content}
             </button>
         </div>
     </div>
