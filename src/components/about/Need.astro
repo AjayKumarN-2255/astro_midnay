@@ -1,6 +1,9 @@
 ---
 import Card from "./Card.astro";
 import { homeSections } from "../../data/about/need_data";
+
+const { needContent } = Astro.props;
+const { heading, paragraph, cards } = needContent;
 ---
 
 <div
@@ -8,21 +11,22 @@ import { homeSections } from "../../data/about/need_data";
 >
     <div class="mx-auto w-fit flex flex-col justify-center">
         <p class="text-primary text-xl text-center font-handwriting">
-            Our focus areas
+            {paragraph}
         </p>
         <h1
-            class="font-nunito text-3xl md:text-4xl text-heading font-bold  text-center"
+            class="font-nunito text-3xl md:text-4xl text-heading font-bold text-center"
         >
-            How We Make An Impact
+            {heading}
         </h1>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
         {
-            homeSections.map((each: any) => (
+            cards.map((each: any) => (
                 <Card
                     title={each.title}
                     content={each.content}
                     image={each.image}
+                    btn_content={each.btn_content}
                 />
             ))
         }

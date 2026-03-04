@@ -5,6 +5,9 @@ const partner_1 = "/src/assets/about/partner_1.png";
 const partner_2 = "/src/assets/about/partner_2.png";
 const partner_3 = "/src/assets/about/partner_3.png";
 const partner_4 = "/src/assets/about/partner_4.png";
+
+const { partnerContent } = Astro.props;
+const { heading, paragraph, content, btn_content } = partnerContent;
 ---
 
 <div
@@ -45,7 +48,7 @@ const partner_4 = "/src/assets/about/partner_4.png";
                     <p
                         class="text-secondary font-handwriting text-lg lg:text-xl mb-3"
                     >
-                        Immediate support needed
+                        {paragraph}
                     </p>
 
                     <!-- Main heading -->
@@ -54,23 +57,21 @@ const partner_4 = "/src/assets/about/partner_4.png";
          whitespace-nowrap
          text-[22px] sm:text-[26px] md:text-[32px] lg:text-[44px]"
                     >
-                        Help Us Fight Hunger Today
+                        {heading}
                     </h1>
 
                     <!-- Description -->
                     <p
                         class="text-base max-w-xl text-white/90 leading-relaxed mb-8"
                     >
-                        Thousands of families struggle for daily meals. Your
-                        immediate support helps us deliver food kits and
-                        nutrition programs to those facing hunger.
+                        {content}
                     </p>
                 </div>
                 <!-- Button -->
                 <div
                     class="bg-secondary text-heading py-3 w-fit h-fit px-6 cursor-pointer font-medium rounded-full"
                 >
-                    Donate now
+                    {btn_content}
                 </div>
             </div>
         </div>

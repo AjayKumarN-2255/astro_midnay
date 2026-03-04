@@ -1,7 +1,11 @@
 ---
-const image_1 = "/src/assets/home/image_1.jpg";
-const image_2 = "/src/assets/home/image_2.jpg";
-const image_3 = "/src/assets/home/image_3.jpg";
+// const image_1 = "/src/assets/home/image_1.jpg";
+// const image_2 = "/src/assets/home/image_2.jpg";
+// const image_3 = "/src/assets/home/image_3.jpg";
+
+const { overAllImages, overAllCards } = Astro.props;
+const { image_1, image_2, image_3 } = overAllImages;
+const { cards } = overAllCards;
 ---
 
 <div class="mt-div_sm_gap lg:mt-div_lg_gap">
@@ -29,23 +33,20 @@ const image_3 = "/src/assets/home/image_3.jpg";
             <h1
                 class="text-3xl md:text-4xl lg:text-5xl font-nunito text-heading"
             >
-                Our Story
+                {cards[0].heading}
             </h1>
             <p
                 class="text-sm md:text-base text-paragraph
                  max-w-full md:max-w-md 2xl:max-w-lg
                  font-extralight leading-relaxed"
             >
-                We help companies develop powerful corporate social
-                responsibility, grantmaking, and employee engagement strategies.
-                Our impact is about more than moving money—it’s about helping
-                nonprofits grow.
+                {cards[0].content}
             </p>
         </div>
 
         <!-- Image -->
         <div class="aspect-[4/3] md:aspect-auto overflow-hidden">
-            <img src={image_3} class="w-full h-full object-cover" />
+            <img src={image_2} class="w-full h-full object-cover" />
         </div>
 
         <!-- Content -->
@@ -57,21 +58,20 @@ const image_3 = "/src/assets/home/image_3.jpg";
                py-6 md:py-8"
         >
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-nunito">
-                Our Mission
+                {cards[1].heading}
             </h1>
             <p
                 class="text-sm md:text-base
                  max-w-full md:max-w-md 2xl:max-w-lg
                  font-extralight leading-relaxed"
             >
-                We help companies develop powerful corporate social
-                responsibility, grantmaking, and employee engagement strategies.
+                {cards[1].content}
             </p>
         </div>
 
         <!-- Image -->
         <div class="aspect-[4/3] md:aspect-auto overflow-hidden">
-            <img src={image_2} class="w-full h-full object-cover" />
+            <img src={image_3} class="w-full h-full object-cover" />
         </div>
 
         <!-- Content -->
@@ -85,15 +85,14 @@ const image_3 = "/src/assets/home/image_3.jpg";
             <h1
                 class="text-3xl md:text-4xl lg:text-5xl font-nunito text-heading"
             >
-                Our Story
+                {cards[2].heading}
             </h1>
             <p
                 class="text-sm md:text-base text-paragraph
                  max-w-full md:max-w-md 2xl:max-w-lg
                  font-extralight leading-relaxed"
             >
-                We help companies develop powerful corporate social
-                responsibility, grantmaking, and employee engagement strategies.
+                {cards[2].content}
             </p>
         </div>
     </div>
