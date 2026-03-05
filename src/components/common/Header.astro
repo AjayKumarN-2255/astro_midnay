@@ -1,3 +1,8 @@
+---
+import { fetchNavMenu } from "../../lib/getNavMenu";
+const navMenu = await fetchNavMenu("primary");
+---
+
 <div>
     <div
         class="bg-primary hidden text-white px-16 py-2 md:flex justify-between items-center text-sm font-light"
@@ -48,64 +53,52 @@
                 />
             </a>
         </div>
-        <div>
+        <div id="menu-btn" class="lg:hidden cursor-pointer">
             <img
                 src="/src/assets/hamburger.png"
                 alt="Logo"
-                class="h-4 lg:hidden w-auto"
+                class="h-4 w-auto"
             />
         </div>
+
+        <!-- Overlay -->
+        <div id="overlay" class="fixed inset-0 bg-black/50 hidden z-40"></div>
+
+        <!-- Side Menu -->
+        <div
+            id="mobile-menu"
+            class="fixed top-0 left-0 h-full w-[280px] bg-white transform -translate-x-full transition-transform duration-300 z-50"
+        >
+            <div class="flex justify-between items-center p-6 border-b">
+                <h2 class="font-bold">Menu</h2>
+                <button id="close-menu">✕</button>
+            </div>
+
+            <nav class="flex flex-col gap-4 p-6">
+                {
+                    navMenu.map((item: any) => (
+                        <a href={item.path.replace(/\/$/, "")}>{item.label}</a>
+                    ))
+                }
+            </nav>
+        </div>
+
         <div class="hidden lg:flex items-center gap-6">
             <ul class="flex text-sm lg:text-base gap-6">
-                <li>
-                    <a
-                        href="/about"
-                        class="cursor-pointer hover:opacity-80 transition-opacity"
-                    >
-                        About Us
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/what-we-do"
-                        class="cursor-pointer hover:opacity-80 transition-opacity"
-                    >
-                        What We Do
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/get-involved"
-                        class="cursor-pointer hover:opacity-80 transition-opacity"
-                    >
-                        Get Involved
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/impact"
-                        class="cursor-pointer hover:opacity-80 transition-opacity"
-                    >
-                        Impact
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/resources"
-                        class="cursor-pointer hover:opacity-80 transition-opacity"
-                    >
-                        Resources
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/contact"
-                        class="cursor-pointer hover:opacity-80 transition-opacity"
-                    >
-                        Contact Us
-                    </a>
-                </li>
+                {
+                    navMenu.map((item: any) => (
+                        <li>
+                            <a
+                                href={item.path.replace(/\/$/, "")}
+                                class="cursor-pointer hover:opacity-80 transition-opacity"
+                            >
+                                {item.label}
+                            </a>
+                        </li>
+                    ))
+                }
             </ul>
+
             <div
                 class="bg-secondary py-3 px-6 cursor-pointer font-medium rounded-full"
             >
@@ -114,3 +107,24 @@
         </div>
     </nav>
 </div>
+
+<script>
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const overlay = document.getElementById("overlay");
+    const close = document.getElementById("close-menu");
+
+    function openMenu() {
+        menu?.classList.remove("-translate-x-full");
+        overlay?.classList.remove("hidden");
+    }
+
+    function closeMenu() {
+        menu?.classList.add("-translate-x-full");
+        overlay?.classList.add("hidden");
+    }
+
+    btn?.addEventListener("click", openMenu);
+    close?.addEventListener("click", closeMenu);
+    overlay?.addEventListener("click", closeMenu);
+</script>
