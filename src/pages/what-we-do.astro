@@ -6,19 +6,71 @@ import Driven from "../components/wedo/Driven.astro";
 import Services from "../components/wedo/Services.astro";
 import Partner from "../components/wedo/Partner.astro";
 import Support from "../components/wedo/Support.astro";
+
+import { fetchPageBySlug } from "../lib/getPageData";
+import { extractSectionContent } from "../lib/ extractContent";
+import { load } from "cheerio";
+
+const page = await fetchPageBySlug("what-we-do");
+
+const $ = load(page.content);
+
+const bannerContent = extractSectionContent($(".banner"), {
+    fields: {
+        heading: { selector: "h2" },
+        image: { selector: "img", attr: "src" },
+    },
+});
+
+const drivenContent = extractSectionContent($(".driven"), {
+    fields: {
+        image: { selector: "img", attr: "src" },
+        paragraph: { selector: "p" },
+        heading: { selector: "h2", format: "html" },
+        content: { selector: ".content_1" },
+        subContent: { selector: ".content_2" },
+    },
+});
+
+const serviceContent = extractSectionContent($(".services"), {
+    fields: {
+        paragraph: { selector: "p" },
+        heading: { selector: "h2" },
+    },
+    cards: {
+        selector: ".services_card",
+        fields: {
+            image: { selector: "img", attr: "src" },
+            title: { selector: "h2" },
+            content: { selector: "p" },
+        },
+        $,
+    },
+});
+
+const supportContent = extractSectionContent($(".support"), {
+    fields: {
+        paragraph: { selector: "p" },
+        heading: { selector: "h2", format: "html" },
+        content: { selector: ".support_content" },
+        btn_content: { selector: ".support_btn" },
+    },
+});
+
+console.log(supportContent);
 ---
 
 <Layout>
     <!-- overall container -->
-    <Banner />
+    <Banner bannerContent={bannerContent} />
     <main class="w-full">
         <div
             class="w-[92%] sm:w-[90%] md:w-[92%] xl:max-w-[1300px] 2xl:max-w-[1600px] mx-auto"
         >
-            <Driven />
-            <Services />
+            <Driven drivenContent={drivenContent} />
+            <Services serviceContent={serviceContent} />
             <Partner />
-            <Support />
+            <Support supportContent={supportContent} />
         </div>
     </main>
 </Layout>
