@@ -1,5 +1,8 @@
 ---
-import { opportunities } from "../../data/involved/opp_data";
+// import { opportunities } from "../../data/involved/opp_data";
+
+const { oppContent } = Astro.props;
+const { paragraph, heading, cards } = oppContent;
 ---
 
 <div
@@ -7,18 +10,18 @@ import { opportunities } from "../../data/involved/opp_data";
 >
     <div class="mx-auto w-fit flex flex-col justify-center mb-6 lg:mb-12">
         <p class="text-primary text-xl text-center font-handwriting">
-            Donate your time
+            {paragraph}
         </p>
         <h1
             class="font-nunito text-3xl md:text-5xl text-heading font-bold text-center"
         >
-            Volunteer Opportunities
+            {heading}
         </h1>
     </div>
     <div class="max-w-[1040px] 2xl:max-w-[1200px] w-full mx-auto px-4 sm:px-0">
         <div class="grid grid-cols-1  lg:grid-cols-3 gap-6 lg:gap-10">
           {
-            opportunities.map((opp) => (
+            cards.map((opp:any) => (
               <div
                 class="bg-white rounded-3xl
                        border border-secondary/40
@@ -61,7 +64,7 @@ import { opportunities } from "../../data/involved/opp_data";
                     <span class="h-4 w-4 bg-primary text-white flex justify-center items-center rounded-full">
                         
                     </span>
-                    {opp.type}
+                    {opp.time}
                   </span>
                 </div>
       
@@ -74,7 +77,7 @@ import { opportunities } from "../../data/involved/opp_data";
                          hover:bg-secondary hover:text-heading
                          transition"
                 >
-                  Apply Now
+                  {opp.btn_content}
                 </button>
               </div>
             ))

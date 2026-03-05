@@ -1,6 +1,11 @@
+---
+const { bannerContent } = Astro.props;
+const { heading, image } = bannerContent;
+---
+
 <div
     class="w-full h-[406px] 2xl:h-[500px] bg-cover bg-center flex items-center justify-center md:justify-start p-6 lg:p-28 text-white relative"
-    style="background-image: url('/src/assets/banner.jpg')"
+    style=`background-image: url(${image})`
 >
     <!-- Gradient Overlay -->
     <div
@@ -13,7 +18,7 @@
         class="w-full flex flex-col items-center justify-center gap-4 relative z-20"
     >
         <h1 class="text-xl md:text-4xl xl:text-7xl text-center font-nunito">
-            Together,<br> We Create Change
+            {heading}
         </h1>
     </div>
 </div>

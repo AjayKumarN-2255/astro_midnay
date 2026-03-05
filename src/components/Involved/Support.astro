@@ -1,5 +1,8 @@
 ---
 const bgImage = "/src/assets/home/school.jpg";
+
+const { supportContent } = Astro.props;
+const { paragraph, heading, btn_content } = supportContent;
 ---
 
 <div
@@ -40,7 +43,7 @@ const bgImage = "/src/assets/home/school.jpg";
                     <p
                         class="text-secondary font-handwriting text-lg lg:text-xl mb-3"
                     >
-                        Donate to urgent cause
+                        {paragraph}
                     </p>
 
                     <!-- Main heading -->
@@ -48,14 +51,14 @@ const bgImage = "/src/assets/home/school.jpg";
                         class="font-nunito text-white font-black mb-4 leading-none max-w-xl
                                text-[22px] sm:text-[26px] md:text-[36px] lg:text-[48px]"
                     >
-                        Support for eating funds for hungry people
+                        {heading}
                     </h1>
                 </div>
                 <!-- Button -->
                 <div
                     class="bg-secondary text-heading py-3 w-fit h-fit px-6 cursor-pointer font-medium rounded-full"
                 >
-                    Donate now
+                    {btn_content}
                 </div>
             </div>
         </div>
