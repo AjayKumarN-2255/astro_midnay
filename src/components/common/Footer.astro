@@ -1,6 +1,10 @@
 ---
 // Footer.astro
 const currentYear = new Date().getFullYear();
+
+import { fetchNavMenu } from "../../lib/getNavMenu";
+const footerMenu = await fetchNavMenu("footer");
+
 ---
 
 <div
@@ -25,38 +29,11 @@ const currentYear = new Date().getFullYear();
         <div class="flex flex-col gap-6">
             <h3 class="text-xl font-bold">Link</h3>
             <ul class="flex flex-col gap-4">
-                <li>
-                    <a
-                        href="/about"
-                        class="hover:opacity-80 transition-opacity"
-                    >
-                        About Us
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/what-we-do"
-                        class="hover:opacity-80 transition-opacity"
-                    >
-                        What We Do
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/get-involved"
-                        class="hover:opacity-80 transition-opacity"
-                    >
-                        Get Involved
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="/resource"
-                        class="hover:opacity-80 transition-opacity"
-                    >
-                        Resource
-                    </a>
-                </li>
+                {
+                    footerMenu.map((item: any) => (
+                        <a href={item.path.replace(/\/$/, "")}>{item.label}</a>
+                    ))
+                }
             </ul>
         </div>
 
