@@ -20,13 +20,16 @@ const { title, content, image } = Astro.props;
             set:html={content}
         />
     </div>
+
     <div class="flex justify-start">
-        <button
+        <a
+            href={image}
+            target="_blank"
             class="bg-secondary text-heading flex items-center gap-2 py-3 w-fit
-             h-fit px-10 cursor-pointer font-medium rounded-full"
+                   h-fit px-10 cursor-pointer font-medium rounded-full"
         >
-            DownLoad
+            Download
             <img src="/src/assets/resource/download.png" />
-        </button>
+        </a>
     </div>
 </div>
