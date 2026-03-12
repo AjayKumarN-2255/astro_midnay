@@ -16,8 +16,7 @@ export const fetchPageBySlug = async (slug) => {
         variables: {
             id: slug,       
             idType: "URI",      
-        },
-        fetchPolicy: "no-cache",
+        }
     });
 
     return data?.page || null;
