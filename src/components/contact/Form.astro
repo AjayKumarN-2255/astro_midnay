@@ -87,12 +87,12 @@ const formData = await fetchFormData("240");
 
 <script>
     const form = document.getElementById("contact-form");
-    form?.addEventListener("submit", async (e:any) => {
+    form?.addEventListener("submit", async (e: any) => {
         e.preventDefault();
         const formData = new FormData(e.target);
         try {
             const response = await fetch(
-                "http://localhost:10038/wp-admin/admin-ajax.php",
+                `${import.meta.env.PUBLIC_WP_API}/wp-admin/admin-ajax.php`,
                 {
                     method: "POST",
                     body: formData,

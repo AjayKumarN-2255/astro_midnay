@@ -25,7 +25,6 @@ export const fetchPosts = async (pageSize = 6, afterCursor = null) => {
   const { data } = await client.query({
     query: GET_POSTS,
     variables: { first: pageSize, after: afterCursor },
-    fetchPolicy: "no-cache",
   });
 
   return {

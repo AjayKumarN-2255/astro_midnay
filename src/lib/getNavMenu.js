@@ -20,8 +20,7 @@ export const fetchNavMenu = async (location = "PRIMARY") => {
         variables: {
             id: location,
             idType: "LOCATION",
-        },
-        fetchPolicy: "no-cache",
+        }
     });
 
     return data?.menu?.menuItems?.nodes || [];

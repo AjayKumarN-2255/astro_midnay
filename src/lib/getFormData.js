@@ -1,7 +1,10 @@
 
 export async function fetchFormData(formId) {
     try {
-        const res = await fetch(`http://localhost:10038/wp-json/custom/v1/form/${formId}`);
+        const res = await fetch(
+            `${import.meta.env.PUBLIC_WP_API}/wp-json/custom/v1/form/${formId}`,
+            { cache: "force-cache" }
+        );
 
         if (!res.ok) {
             throw new Error(`Failed to fetch form: ${res.status}`);
